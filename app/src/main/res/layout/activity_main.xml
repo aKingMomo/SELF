@@ -4,15 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.self.MainActivity">
+    tools:context="com.project.self.Activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logo"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="100dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:id="@+id/userTag"
+            android:text = "@string/userName"
+            android:padding="5dp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/userName"
+            android:layout_toEndOf="@+id/userTag"
+            android:layout_below="@+id/logo"
+            android:focusedByDefault="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userTag"
+            android:id="@+id/passTag"
+            android:text="@string/password"
+            android:padding="5dp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/passWord"
+            android:layout_toEndOf="@+id/passTag"
+            android:layout_below="@+id/userName"
+            android:focusedByDefault="false" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login"
+            android:text="@string/login"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="30dp"
+            android:onClick="onClickListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup"
+            android:text="@string/signup"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="30dp"
+            android:onClick="onClickListener"/>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
