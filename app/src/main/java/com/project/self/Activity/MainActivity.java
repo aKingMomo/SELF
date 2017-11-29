@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.project.self.R;
 
@@ -16,6 +17,8 @@ public class MainActivity extends Activity {
 
     private EditText userName;
     private EditText passWord;
+    private String username;
+    private String password;
     private Button login;
     private Button singup;
 
@@ -28,8 +31,19 @@ public class MainActivity extends Activity {
         passWord =  findViewById(R.id.passWord);
         login = findViewById(R.id.login);
         singup = findViewById(R.id.signup);
+
+
     }
 
+    /*
+    public void loadPreferences(){
+
+    This function will check if the preferences are empty
+    if yes it will check the JSON on local storage
+    if present load from that
+    else call to load Json from DB
+    }
+    */
     public void onClickListener(final View view){
         view.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
@@ -40,10 +54,21 @@ public class MainActivity extends Activity {
                     //1. Username and password are not empty
                     //2. Match with SharedPreferences
                     //if true have autologin set as true so this page doesn't load next time
+                    username = userName.getText().toString();
+                    password = passWord.getText().toString();
 
+                    if(username.equals(null)||password.equals(null)){
+                        Toast.makeText(getApplicationContext(),R.string.fieldmissing,Toast.LENGTH_SHORT).show();
+                    }
+                    /*
+                    //validate with sharedpreference
+
+                    else (){
                     //upon success redirect to homepage
                     Intent homepage = new Intent(MainActivity.this, HomeScreen.class);
-                    startActivity(homepage);
+                    startActivity(homepage);}
+                     */
+
                 }
                 if(view.getId()==singup.getId()){
                     Log.d(TAG,"onClick Called for SignUp");
