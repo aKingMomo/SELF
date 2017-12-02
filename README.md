@@ -1,11 +1,12 @@
 # SELF
 
-##Two Primary Resource Division
+## Two Primary Resource Division
 
 1. UI
 2. Non-UI
 
-###UI
+### UI
+
 1. Styles (for color, custom button design and theme)
    located at: res/values/style.xml
 2. Strings (for UI messages, placeholders, label names and Toast messages)
@@ -17,8 +18,8 @@
 5. Layouts (Where UI XML files will go describing Screen Layout)
     located at: res/layout/
 
+### Non-UI
 
-###Non-UI
 1. Activity (Java class mapping 1-1 corressponding to Layouts from driving actions from screen)
     located at: app/Java/com/project/self/Activity/
 2. Helper (Java Classes which will work on threads to process and transport data from UI to other services)
