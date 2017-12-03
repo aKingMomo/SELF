@@ -5,7 +5,7 @@
     <string name="userName">User Name: *</string>
     <string name="password">Password: *</string>
     <string name="create">CREATE</string>
-    
+
     <string name="fname">First Name:</string>
     <string name="lname">Last Name:</string>
     <string name="email">Email:</string>
@@ -19,8 +19,14 @@
     <string name="cUserName">Confirm User Name: *</string>
     <string name="cPassword">Confirm Password: *</string>
     <string name="ppic">Upload Photo</string>
-    
+
     <string name="fieldmissing">Please enter the missing fields</string>
     <string name="wrongpassword">Wrong Password, please check</string>
     <string name="wrongusername">Wrong Username, please check</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

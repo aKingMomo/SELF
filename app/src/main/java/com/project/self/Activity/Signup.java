@@ -28,6 +28,7 @@ public class Signup extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
         create = findViewById(R.id.create);
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -35,14 +36,14 @@ public class Signup extends Activity {
                 //create userObject
                 Log.d(TAG,"Saving User Data");
                 userJSON = createUserObj();
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(Consts.userData,userJSON.toString());
-                editor.commit();
+                //SharedPreferences.Editor editor = sharedPreferences.edit();
+                //editor.putString(Consts.userData,userJSON.toString());
+                //editor.commit();
                 Log.d(TAG,"Saving UserJSON Data");
                 //reset auto-login to false if new account is created
                 Log.d(TAG,"Auto-Login OFF");
-                editor.putBoolean(Consts.loginKey,false);
-                editor.apply();
+                //editor.putBoolean(Consts.loginKey,false);
+                //editor.apply();
 
                 //send userdata to next activity
                 Toast.makeText(getApplicationContext(),"NEW ACCOUNT CREATED",Toast.LENGTH_SHORT).show();

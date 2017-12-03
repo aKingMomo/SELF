@@ -48,7 +48,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/fname" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/fname"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/lname" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/lname"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/email" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/email"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -109,7 +109,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/birthday" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/birthday"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                         android:padding="5dp"
                         android:text="@string/gender" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/gender"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -152,7 +152,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/phone" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/phone"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -171,7 +171,7 @@
                         android:paddingTop="16dp"
                         android:paddingBottom="8dp"
                         android:text="@string/jtitle" />
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/jtitle"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -191,7 +191,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/country" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/country"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -211,7 +211,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/city" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/city"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -231,7 +231,7 @@
                         android:paddingBottom="8dp"
                         android:text="@string/state" />
 
-                    <EditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/state"
                         android:paddingBottom="8dp"
                         android:layout_width="match_parent"
@@ -251,7 +251,7 @@
                             android:paddingBottom="8dp"
                             android:text="@string/userName" />
 
-                        <EditText
+                        <android.support.design.widget.TextInputEditText
                             android:id="@+id/uNameCreate"
                             android:paddingBottom="8dp"
                             android:layout_width="match_parent"
@@ -271,7 +271,7 @@
                             android:paddingBottom="8dp"
                             android:text="@string/cUserName" />
 
-                        <EditText
+                        <android.support.design.widget.TextInputEditText
                             android:id="@+id/cUName"
                             android:paddingBottom="8dp"
                             android:layout_width="match_parent"
@@ -291,7 +291,7 @@
                             android:paddingBottom="8dp"
                             android:text="@string/password" />
 
-                        <EditText
+                        <android.support.design.widget.TextInputEditText
                             android:id="@+id/passCreate"
                             android:paddingBottom="8dp"
                             android:layout_width="match_parent"
@@ -311,7 +311,7 @@
                             android:paddingBottom="8dp"
                             android:text="@string/cPassword" />
 
-                        <EditText
+                        <android.support.design.widget.TextInputEditText
                             android:id="@+id/cPassword"
                             android:paddingBottom="8dp"
                             android:layout_width="match_parent"
@@ -330,6 +330,7 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
             android:onClick="onClickListener"
+            android:background="@color/secondaryColor"
             android:text="@string/create" />
 
     </RelativeLayout>

@@ -13,14 +13,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
+    <!--
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:paddingTop="100dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_marginTop="72dp"
+            android:src="@drawable/self_icon_color_transparent" />
+            -->
         <LinearLayout
             android:id="@+id/userTag"
             android:layout_width="match_parent"
@@ -33,7 +35,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/userName" />
-        <EditText
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/userName"
             android:paddingBottom="8dp"
             android:layout_width="match_parent"
@@ -54,7 +56,7 @@
             android:paddingBottom="8dp"
             android:text="@string/password" />
 
-        <EditText
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/passWord"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
@@ -70,6 +72,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_margin="30dp"
+            android:background="@color/secondaryColor"
             android:onClick="onClickListener"
             android:text="@string/login" />
 
@@ -81,6 +84,7 @@
             android:layout_alignParentEnd="true"
             android:layout_margin="30dp"
             android:onClick="onClickListener"
+            android:background="@color/secondaryColor"
             android:text="@string/signup" />
     </RelativeLayout>
 

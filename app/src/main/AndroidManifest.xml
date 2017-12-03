@@ -16,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.HomeScreen" />
-        <activity android:name=".Activity.Signup"></activity>
+        <activity android:name=".Activity.Signup" />
+        <activity
+            android:name=".Activity.HomeScreen"
+            android:label="@string/title_activity_home_screen"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
