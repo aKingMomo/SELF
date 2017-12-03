@@ -4,6 +4,334 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.self.Activity.Signup">
+    tools:context="com.project.self.Activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="529dp">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="50dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:paddingTop="70dp"
+                        android:src="@drawable/ic_launcher_background" />
+                    <LinearLayout
+                        android:id="@+id/fnameTag"
+                        android:layout_below="@+id/logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/fname" />
+
+                    <EditText
+                        android:id="@+id/fname"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                    android:id="@+id/lnameTag"
+                    android:layout_below="@+id/fnameTag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/lname" />
+
+                    <EditText
+                        android:id="@+id/lname"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false"
+                        android:inputType="textPassword" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/emailTag"
+                        android:layout_below="@+id/lnameTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/email" />
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/birthTag"
+                        android:layout_below="@+id/emailTag">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/birthday" />
+
+                    <EditText
+                        android:id="@+id/birthday"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/genderTag"
+                        android:layout_below="@+id/birthTag">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:padding="5dp"
+                        android:text="@string/gender" />
+
+                    <EditText
+                        android:id="@+id/gender"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/phoneTag"
+                        android:layout_below="@+id/genderTag">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/phone" />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/jtitleTag"
+                        android:layout_below="@+id/phoneTag">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/jtitle" />
+                    <EditText
+                        android:id="@+id/jtitle"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/countrytag"
+                        android:layout_below="@+id/jtitleTag">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/country" />
+
+                    <EditText
+                        android:id="@+id/country"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/cityTag"
+                        android:layout_below="@+id/countrytag">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/city" />
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/stateTag"
+                        android:layout_below="@+id/cityTag">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/state" />
+
+                    <EditText
+                        android:id="@+id/state"
+                        android:paddingBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/uNameTag"
+                        android:layout_below="@+id/stateTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/userName" />
+
+                        <EditText
+                            android:id="@+id/uNameCreate"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/cUNameTag"
+                        android:layout_below="@+id/uNameTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/cUserName" />
+
+                        <EditText
+                            android:id="@+id/cUName"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/passwordTag"
+                        android:layout_below="@+id/cUNameTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/password" />
+
+                        <EditText
+                            android:id="@+id/passCreate"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/cPasswordTag"
+                        android:layout_below="@+id/passwordTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/cPassword" />
+
+                        <EditText
+                            android:id="@+id/cPassword"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:onClick="onClickListener"
+            android:text="@string/create" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -2,7 +2,25 @@
     <string name="app_name">Self</string>
     <string name="login">LOGIN</string>
     <string name="signup">SIGN UP</string>
-    <string name="userName">User Name</string>
-    <string name="password">Password</string>
+    <string name="userName">User Name: *</string>
+    <string name="password">Password: *</string>
+    <string name="create">CREATE</string>
+    
+    <string name="fname">First Name:</string>
+    <string name="lname">Last Name:</string>
+    <string name="email">Email:</string>
+    <string name="birthday">Birthday:</string>
+    <string name="gender">Gender:</string>
+    <string name="phone">PhoneNumber:</string>
+    <string name="jtitle">Job Title:</string>
+    <string name="country">Country:</string>
+    <string name="city">City:</string>
+    <string name="state">State:</string>
+    <string name="cUserName">Confirm User Name: *</string>
+    <string name="cPassword">Confirm Password: *</string>
+    <string name="ppic">Upload Photo</string>
+    
     <string name="fieldmissing">Please enter the missing fields</string>
+    <string name="wrongpassword">Wrong Password, please check</string>
+    <string name="wrongusername">Wrong Username, please check</string>
 </resources>
