@@ -5,19 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/profileEdit"
             android:icon="@drawable/profile"
             android:title="Edit Profile" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/personaEdit"
             android:icon="@drawable/persona"
             android:title="Edit Persona" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/sharepersona"
             android:icon="@drawable/ic_menu_send"
             android:title="Share Persona" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/setting"
             android:icon="@drawable/ic_menu_manage"
             android:title="Settings" />
     </group>
@@ -25,11 +25,11 @@
     <item android:title="">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/shareapp"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/logout"
                 android:icon="@drawable/logout"
                 android:title="Logout" />
         </menu>

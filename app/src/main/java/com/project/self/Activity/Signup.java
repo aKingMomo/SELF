@@ -1,6 +1,7 @@
 package com.project.self.Activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -27,7 +28,7 @@ public class Signup extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
 
         create = findViewById(R.id.create);
 
@@ -36,14 +37,18 @@ public class Signup extends Activity {
                 //create userObject
                 Log.d(TAG,"Saving User Data");
                 userJSON = createUserObj();
-                //SharedPreferences.Editor editor = sharedPreferences.edit();
-                //editor.putString(Consts.userData,userJSON.toString());
-                //editor.commit();
-                Log.d(TAG,"Saving UserJSON Data");
-                //reset auto-login to false if new account is created
-                Log.d(TAG,"Auto-Login OFF");
-                //editor.putBoolean(Consts.loginKey,false);
-                //editor.apply();
+                try {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(Consts.userData, userJSON.toString());
+                    editor.commit();
+                    Log.d(TAG, "Saving UserJSON Data");
+                    //reset auto-login to false if new account is created
+                    Log.d(TAG, "Auto-Login OFF");
+                    editor.putBoolean(Consts.loginKey, false);
+                    editor.apply();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
 
                 //send userdata to next activity
                 Toast.makeText(getApplicationContext(),"NEW ACCOUNT CREATED",Toast.LENGTH_SHORT).show();

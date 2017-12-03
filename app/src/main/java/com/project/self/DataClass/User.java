@@ -1,11 +1,5 @@
 package com.project.self.DataClass;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.project.self.Helper.SharedPreferences;
-import com.project.self.R;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 

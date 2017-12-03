@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
                     Log.d(TAG, "onClick Called for Login");
                     //todo validate
                     //1. Username and password are not empty
-                    //2. Match with SharedPreferences
+                    //2. Match with Sharedpreferences
                     username = userName.getText().toString();
                     password = passWord.getText().toString();
 
