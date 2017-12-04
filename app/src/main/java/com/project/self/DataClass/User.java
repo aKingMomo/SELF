@@ -1,5 +1,9 @@
 package com.project.self.DataClass;
 
+import android.nfc.Tag;
+import android.support.design.widget.TabLayout;
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,6 +49,8 @@ public class User {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Log.d("USER","JSON DATA"+newJson);
         return newJson;
     }
 

@@ -1,5 +1,6 @@
 package com.project.self.Activity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -33,6 +34,7 @@ public class HomeScreen extends AppCompatActivity
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
         inflateData();
 
         name = findViewById(R.id.profileName);

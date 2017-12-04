@@ -41,7 +41,7 @@ public class Signup extends Activity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(Consts.userData, userJSON.toString());
                     editor.commit();
-                    Log.d(TAG, "Saving UserJSON Data");
+                    Log.d(TAG, "Saving UserJSON Data"+userJSON);
                     //reset auto-login to false if new account is created
                     Log.d(TAG, "Auto-Login OFF");
                     editor.putBoolean(Consts.loginKey, false);
@@ -61,16 +61,47 @@ public class Signup extends Activity {
     public JSONObject createUserObj(){
 
         newUser = new User();
-        newUser.setFirstName(((EditText)findViewById(R.id.fname)).getText().toString());
-        newUser.setLastName(((EditText)findViewById(R.id.lname)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.email)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.phone)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.country)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.city)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.state)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.birthday)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.gender)).getText().toString());
-        newUser.setFirstName(((EditText)findViewById(R.id.jtitle)).getText().toString());
+
+        EditText fname = findViewById(R.id.fname);
+        String tempStr = fname.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText lname = findViewById(R.id.lname);
+        tempStr = lname.getText().toString();
+        newUser.setLastName(tempStr);
+
+        EditText email = findViewById(R.id.email);
+        tempStr = email.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText phone = findViewById(R.id.phone);
+        tempStr = phone.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText country = findViewById(R.id.country);
+        tempStr = country.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText city = findViewById(R.id.city);
+        tempStr = city.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText state = findViewById(R.id.state);
+        tempStr = state.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText birth = findViewById(R.id.birthday);
+        tempStr = birth.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText gender = findViewById(R.id.gender);
+        tempStr = gender.getText().toString();
+        newUser.setFirstName(tempStr);
+
+        EditText jtitle = findViewById(R.id.jtitle);
+        tempStr = jtitle.getText().toString();
+        newUser.setFirstName(tempStr);
+
 
         return newUser.createJson();
     }

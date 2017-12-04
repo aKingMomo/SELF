@@ -35,6 +35,7 @@
                         android:layout_centerHorizontal="true"
                         android:paddingTop="70dp"
                         android:src="@drawable/ic_launcher_background" />
+
                     <LinearLayout
                         android:id="@+id/fnameTag"
                         android:layout_below="@+id/logo"
@@ -55,6 +56,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+                    
                     <LinearLayout
                     android:id="@+id/lnameTag"
                     android:layout_below="@+id/fnameTag"
@@ -76,6 +78,7 @@
                         android:focusedByDefault="false"
                         android:inputType="textPassword" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/emailTag"
                         android:layout_below="@+id/lnameTag"
@@ -116,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -138,6 +142,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,7 +150,6 @@
                         android:id="@+id/phoneTag"
                         android:layout_below="@+id/genderTag">
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="16dp"
@@ -159,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -178,6 +183,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -198,6 +204,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -218,6 +225,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -238,6 +246,7 @@
                         android:layout_height="wrap_content"
                         android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/uNameTag"
                         android:layout_below="@+id/stateTag"
@@ -258,6 +267,7 @@
                             android:layout_height="wrap_content"
                             android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/cUNameTag"
                         android:layout_below="@+id/uNameTag"
@@ -278,6 +288,7 @@
                             android:layout_height="wrap_content"
                             android:focusedByDefault="false" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/passwordTag"
                         android:layout_below="@+id/cUNameTag"
@@ -304,6 +315,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
