@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     User newUser;
-    SharedPreferences sharedPreferences;
+
 
     TextView name;
     TextView email;
@@ -34,15 +35,8 @@ public class HomeScreen extends AppCompatActivity
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+
         inflateData();
-
-        name = findViewById(R.id.profileName);
-        String fullName = newUser.getFirstName()+" "+newUser.getLastName();
-        name.setText(fullName);
-
-        email = findViewById(R.id.profileEmail);
-        email.setText(newUser.getEmail());
 
 
         /*
@@ -65,11 +59,15 @@ public class HomeScreen extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
     //loads data from shareprefernces and updates it on screen
     public void inflateData(){
         JSONObject userObj;
+        SharedPreferences sharedPreferences =getSharedPreferences("Admin",MODE_PRIVATE);
         String userdata = sharedPreferences.getString(Consts.userData,"");
+        newUser = new User();
+        Log.d("HOMESCREEN","inflateData"+userdata);
         if(!userdata.equals(null)) {
             try {
 
@@ -77,13 +75,16 @@ public class HomeScreen extends AppCompatActivity
                 userObj = new JSONObject(userdata);
                 newUser.setFirstName(userObj.getString(Consts.fName));
                 newUser.setLastName(userObj.getString(Consts.lName));
+                /*
                 newUser.setBirthday(userObj.getString(Consts.birth));
                 newUser.setCity(userObj.getString(Consts.city));
-                newUser.setEmail(userObj.getString(Consts.eMail));
                 newUser.setJobTitle(userObj.getString(Consts.jTitle));
                 newUser.setState(userObj.getString(Consts.state));
                 newUser.setGender(userObj.getString(Consts.gender));
                 newUser.setPhone(userObj.getString(Consts.phone));
+
+                */
+                newUser.setEmail(userObj.getString(Consts.eMail));
 
 
             } catch (JSONException e) {
@@ -98,9 +99,10 @@ public class HomeScreen extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
+        /*else {
+            //super.onBackPressed();
+        }*/
     }
 
     @Override

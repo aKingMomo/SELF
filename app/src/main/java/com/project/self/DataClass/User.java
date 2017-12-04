@@ -33,12 +33,15 @@ public class User {
 
 
         try {
-            newJson.put(Consts.userID,getUserID());
+
+            //newJson.put(Consts.userID,getUserID());
+            Log.d("USER",getUsername()+getPassword()+getFirstName()+getLastName()+getEmail());
             newJson.put(Consts.userKey,getUsername());
             newJson.put(Consts.passKey,getPassword());
             newJson.put(Consts.fName,getFirstName());
             newJson.put(Consts.lName,getLastName());
             newJson.put(Consts.eMail,getEmail());
+            /*
             newJson.put(Consts.birth,getBirthday());
             newJson.put(Consts.gender,getGender());
             newJson.put(Consts.phone,getPhone());
@@ -46,6 +49,7 @@ public class User {
             newJson.put(Consts.country,getCountry());
             newJson.put(Consts.city,getCity());
             newJson.put(Consts.state,getState());
+            */
         } catch (JSONException e) {
             e.printStackTrace();
         }

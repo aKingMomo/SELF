@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
     }
     public void loadPreferences(){
         Log.d(TAG,"Preferences are Loading");
+        sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
         /*
     This function will check if the preferences are empty
     if yes it will check the JSON on local storage
@@ -86,8 +87,8 @@ public class MainActivity extends Activity {
                     }
 
                     //validate with sharedpreference
-
-                    if (sharedPreferences.getString(Consts.userKey, "").equals(userName)) {
+                    Log.d(TAG,"Username"+sharedPreferences.getString(Consts.userKey,"")+"Password:"+sharedPreferences.getString(Consts.passKey,""));
+                    if (sharedPreferences.getString(Consts.userKey, "").equals(username)) {
                         if (sharedPreferences.getString(Consts.passKey, "").equals(password)) {
 
                             Log.d(TAG,"Login Successful saving auto-login true");
