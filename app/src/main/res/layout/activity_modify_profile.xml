@@ -108,19 +108,19 @@
                         android:orientation="vertical"
                         android:id="@+id/birthTag"
                         android:layout_below="@+id/emailTag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/birthday" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/birthday" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/birthday"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/birthday"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -129,21 +129,21 @@
                         android:orientation="vertical"
                         android:id="@+id/genderTag"
                         android:layout_below="@+id/birthTag">
-                    <TextView
+                        <TextView
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:padding="5dp"
-                        android:text="@string/gender" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:padding="5dp"
+                            android:text="@string/gender" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/gender"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/gender"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -152,19 +152,19 @@
                         android:orientation="vertical"
                         android:id="@+id/phoneTag"
                         android:layout_below="@+id/genderTag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/phone" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/phone" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/phone"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/phone"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -173,18 +173,18 @@
                         android:orientation="vertical"
                         android:id="@+id/jtitleTag"
                         android:layout_below="@+id/phoneTag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/jtitle" />
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/jtitle"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/jtitle" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/jtitle"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -193,19 +193,19 @@
                         android:orientation="vertical"
                         android:id="@+id/countrytag"
                         android:layout_below="@+id/jtitleTag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/country" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/country" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/country"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/country"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -214,19 +214,19 @@
                         android:orientation="vertical"
                         android:id="@+id/cityTag"
                         android:layout_below="@+id/countrytag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/city" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/city" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/city"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/city"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -235,19 +235,19 @@
                         android:orientation="vertical"
                         android:id="@+id/stateTag"
                         android:layout_below="@+id/cityTag">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/state" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/state" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/state"
-                        android:paddingBottom="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusedByDefault="false" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/state"
+                            android:paddingBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusedByDefault="false" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/uNameTag"
@@ -271,33 +271,12 @@
                             android:paddingBottom="8dp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/cUNameTag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/uNameTag"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="8dp"
-                            android:paddingTop="16dp"
-                            android:text="@string/cUserName" />
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/cUName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusedByDefault="false"
-                            android:paddingBottom="8dp" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/passwordTag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/cUNameTag"
+                        android:layout_below="@+id/uNameTag"
                         android:orientation="vertical">
 
                         <TextView
@@ -343,7 +322,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/create"
+            android:id="@+id/modify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -351,7 +330,7 @@
             android:layout_margin="5dp"
             android:background="@color/secondaryColor"
             android:onClick="onClickListener"
-            android:text="@string/create" />
+            android:text="@string/modify" />
 
     </RelativeLayout>
 

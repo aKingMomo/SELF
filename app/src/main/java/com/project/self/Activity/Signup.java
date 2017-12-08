@@ -89,35 +89,35 @@ public class Signup extends Activity {
         EditText password = findViewById(R.id.passCreate);
         tempStr = password.getText().toString();
         newUser.setPassword(tempStr);
-        /*
+
         EditText phone = findViewById(R.id.phone);
         tempStr = phone.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setPhone(tempStr);
 
         EditText country = findViewById(R.id.country);
         tempStr = country.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setCountry(tempStr);
 
         EditText city = findViewById(R.id.city);
         tempStr = city.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setCity(tempStr);
 
         EditText state = findViewById(R.id.state);
         tempStr = state.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setState(tempStr);
 
         EditText birth = findViewById(R.id.birthday);
         tempStr = birth.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setBirthday(tempStr);
 
         EditText gender = findViewById(R.id.gender);
         tempStr = gender.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setGender(tempStr);
 
         EditText jtitle = findViewById(R.id.jtitle);
         tempStr = jtitle.getText().toString();
-        newUser.setFirstName(tempStr);
-        */
+        newUser.setJobTitle(tempStr);
+
 
         return newUser.createJson();
     }

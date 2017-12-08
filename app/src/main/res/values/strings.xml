@@ -5,6 +5,7 @@
     <string name="userName">User Name: *</string>
     <string name="password">Password: *</string>
     <string name="create">CREATE</string>
+    <string name="modify">MODIFY</string>
 
     <string name="fname">First Name:</string>
     <string name="lname">Last Name:</string>

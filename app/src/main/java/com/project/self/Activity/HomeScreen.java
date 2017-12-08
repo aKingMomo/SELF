@@ -1,6 +1,8 @@
 package com.project.self.Activity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -24,7 +26,7 @@ import org.json.JSONObject;
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     User newUser;
-
+    private final static String TAG = "HomeScreen";
 
     TextView name;
     TextView email;
@@ -75,15 +77,12 @@ public class HomeScreen extends AppCompatActivity
                 userObj = new JSONObject(userdata);
                 newUser.setFirstName(userObj.getString(Consts.fName));
                 newUser.setLastName(userObj.getString(Consts.lName));
-                /*
                 newUser.setBirthday(userObj.getString(Consts.birth));
                 newUser.setCity(userObj.getString(Consts.city));
                 newUser.setJobTitle(userObj.getString(Consts.jTitle));
                 newUser.setState(userObj.getString(Consts.state));
                 newUser.setGender(userObj.getString(Consts.gender));
                 newUser.setPhone(userObj.getString(Consts.phone));
-
-                */
                 newUser.setEmail(userObj.getString(Consts.eMail));
 
 
@@ -137,6 +136,8 @@ public class HomeScreen extends AppCompatActivity
 
         if (id == R.id.profileEdit) {
             // hand profile edit
+            Intent intent = new Intent(HomeScreen.this, ModifyProfile.class);
+            startActivity(intent);
         } else if (id == R.id.personaEdit) {
             //handle persona edit
         } else if (id == R.id.sharepersona) {
@@ -147,6 +148,13 @@ public class HomeScreen extends AppCompatActivity
             //app settings
         } else if (id == R.id.logout) {
             //logout
+            SharedPreferences sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Log.d(TAG, "Auto-Login OFF");
+            editor.putBoolean(Consts.loginKey, false);
+            editor.apply();
+            Intent homepage = new Intent(HomeScreen.this, MainActivity.class);
+            startActivity(homepage);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

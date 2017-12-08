@@ -41,7 +41,6 @@ public class User {
             newJson.put(Consts.fName,getFirstName());
             newJson.put(Consts.lName,getLastName());
             newJson.put(Consts.eMail,getEmail());
-            /*
             newJson.put(Consts.birth,getBirthday());
             newJson.put(Consts.gender,getGender());
             newJson.put(Consts.phone,getPhone());
@@ -49,7 +48,7 @@ public class User {
             newJson.put(Consts.country,getCountry());
             newJson.put(Consts.city,getCity());
             newJson.put(Consts.state,getState());
-            */
+            
         } catch (JSONException e) {
             e.printStackTrace();
         }
