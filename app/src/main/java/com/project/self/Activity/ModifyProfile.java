@@ -1,6 +1,7 @@
 package com.project.self.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +40,10 @@ public class ModifyProfile extends Activity {
             @Override
             public void onClick(View view) {
                 updateData();
+
+                Toast.makeText(getApplicationContext(),"ACCOUNT DETAILS UPDATED",Toast.LENGTH_SHORT).show();
+                Intent homepage = new Intent(ModifyProfile.this, HomeScreen.class);
+                startActivity(homepage);
             }
         });
 
@@ -48,6 +53,17 @@ public class ModifyProfile extends Activity {
     //and then update sharedpreferences
     public void updateData(){
         //TODO listed above
+        userJSON = createUserObj();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Consts.userData, userJSON.toString());
+        editor.putString(Consts.userKey,newUser.getUsername());
+        editor.putString(Consts.passKey,newUser.getPassword());
+        editor.commit();
+        Log.d(TAG, "Saving UserJSON Data"+sharedPreferences.getString(Consts.userData,""));
+        //reset auto-login to false if new account is created
+        Log.d(TAG, "Auto-Login OFF");
+        editor.putBoolean(Consts.loginKey, false);
+        editor.apply();
     }
 
     //read data already save in SharedPreference
@@ -182,7 +198,7 @@ public class ModifyProfile extends Activity {
 
         EditText phone = findViewById(R.id.phone);
         tempStr = phone.getText().toString();
-        newUser.setFirstName(tempStr);
+        newUser.setPhone(tempStr);
 
         EditText country = findViewById(R.id.country);
         tempStr = country.getText().toString();

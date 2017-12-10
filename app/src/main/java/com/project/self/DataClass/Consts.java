@@ -1,5 +1,7 @@
 package com.project.self.DataClass;
 
+import android.os.Environment;
+
 import com.project.self.Activity.Signup;
 
 /**
@@ -34,5 +36,12 @@ public class Consts {
     public static final String country = "COUNTRY";
     public static final String city = "CITY";
     public static final String state = "STATE";
+
+
+    //for DB and output creation
+    public static final String folderLocation= Environment.getExternalStorageDirectory()+"/SelfData";
+    public static final String dbUserName="";
+    public static final String dbPassword="";
+    public static final String dbURL="";
 
 }

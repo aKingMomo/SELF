@@ -1,0 +1,16 @@
+{
+  "nameValuePairs": {
+    "USERNAME": "mm",
+    "PASSWORD": "blah",
+    "FIRST NAME": "Mohit",
+    "LAST NAME": "Mondal",
+    "EMAIL": "mm@abc.com",
+    "BIRTHDAY": "06/07/93",
+    "GENDER": "Male",
+    "PHONE NUMBER": "9876543210",
+    "JOB TITLE": "Sales Manager",
+    "COUNTRY": "USA",
+    "CITY": "NYC",
+    "STATE": "NY"
+  }
+}
