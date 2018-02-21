@@ -34,20 +34,23 @@ public class MainActivity extends Activity {
         passWord =  findViewById(R.id.passWord);
         login = findViewById(R.id.login);
         singup = findViewById(R.id.signup);
-        autoLogin();
         loadPreferences();
+
+
 
     }
 
     public void autoLogin(){
         Log.d(TAG,"Auto-Login Checking");
-        /*
+
         //if user if already logged in then redirect
-        if(sharedPreferences.getBoolean(Consts.loginKey,false){
+        if(sharedPreferences.getBoolean(Consts.loginKey,false)){
         Log.d(TAG,"Auto-Login Check, successful");
             //redirect to homePage
+            Intent homepage = new Intent(MainActivity.this, HomeScreen.class);
+            startActivity(homepage);
         }
-        */
+
     }
     public void loadPreferences(){
         Log.d(TAG,"Preferences are Loading");

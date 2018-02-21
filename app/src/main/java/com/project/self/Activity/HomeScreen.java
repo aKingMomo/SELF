@@ -140,6 +140,9 @@ public class HomeScreen extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.personaEdit) {
             //handle persona edit
+            Intent intent = new Intent(HomeScreen.this, Persona.class);
+            startActivity(intent);
+
         } else if (id == R.id.sharepersona) {
             //handle share persona
         } else if (id == R.id.shareapp) {

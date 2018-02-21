@@ -21,7 +21,8 @@
             android:name=".Activity.HomeScreen"
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.ModifyProfile"></activity>
+        <activity android:name=".Activity.ModifyProfile" />
+        <activity android:name=".Activity.Persona"></activity>
     </application>
 
 </manifest>

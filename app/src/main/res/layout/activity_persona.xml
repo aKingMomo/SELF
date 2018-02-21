@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.self.Activity.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerText"
+            android:text="Select from the available fields for Your Persona"
+            android:textColor="@color/secondaryTextColor"
+            android:padding="8dp"
+            android:layout_margin="5dp"/>
+
+        <!--Main Preset List-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/headerText"
+            android:layout_above="@id/clearPersona">
+            <ListView
+                android:id="@+id/personaListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+            </ListView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/createPersona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/secondaryColor"
+            android:onClick="onClickListener"
+            android:text="@string/create" />
+
+        <Button
+            android:id="@+id/clearPersona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="onClickListener"
+            android:background="@color/secondaryColor"
+            android:text="@string/clear" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
