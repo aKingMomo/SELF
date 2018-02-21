@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.project.self.DataClass.Consts;
 import com.project.self.DataClass.User;
+import com.project.self.Helper.JSONWriter;
 import com.project.self.R;
 
 import org.json.JSONException;
@@ -156,6 +157,9 @@ public class HomeScreen extends AppCompatActivity
             Log.d(TAG, "Auto-Login OFF");
             editor.putBoolean(Consts.loginKey, false);
             editor.apply();
+            JSONWriter jsonWriter = new JSONWriter();
+            jsonWriter.loadJSON(sharedPreferences.getString(Consts.userData,""));
+            jsonWriter.writetoLocalStorage();
             Intent homepage = new Intent(HomeScreen.this, MainActivity.class);
             startActivity(homepage);
         }

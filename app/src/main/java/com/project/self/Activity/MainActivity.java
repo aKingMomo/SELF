@@ -11,7 +11,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.project.self.DataClass.Consts;
+import com.project.self.Helper.DBHandler;
+import com.project.self.Helper.JSONWriter;
 import com.project.self.R;
+
+import org.json.JSONObject;
 
 public class MainActivity extends Activity {
 
@@ -29,7 +33,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
         userName =  findViewById(R.id.userName);
         passWord =  findViewById(R.id.passWord);
         login = findViewById(R.id.login);
@@ -54,22 +58,31 @@ public class MainActivity extends Activity {
     }
     public void loadPreferences(){
         Log.d(TAG,"Preferences are Loading");
-        sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
         /*
-    This function will check if the preferences are empty
-    if yes it will check the JSON on local storage
-    if present load from that
-    else call to load Json from DB
-
-        if(sharedPreferences.getString(Consts.userKey,"").equals("")){
-        Log.d(TAG,"Sharedpreferences empty loading JSON");
+        This function will check if the preferences are empty
+        if yes it will check the JSON on local storage
+        if present load from that
+        else call to load Json from DB
+        */
+        //if(sharedPreferences.getString(Consts.userKey,"").equals("")){
+        //Log.d(TAG,"Sharedpreferences empty loading JSON");
             //load from DB
+        /*
+            DBHandler dbHandler =  new DBHandler();
+            dbHandler.pullfromDB();
+            JSONWriter jsonWriter = new JSONWriter();
+            JSONObject userData = jsonWriter.readFromLocalStorage();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(Consts.userData,userData.toString());
+            editor.commit();
+
+            */
             //read username and password and save it their respective keys
             //then read the user JSON data as string and convert it to JSON and then save each value to a User.java object
-        }
+        //}
 
-        */
 
+        
 
     }
 
