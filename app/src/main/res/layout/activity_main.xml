@@ -69,9 +69,10 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_margin="30dp"
+            android:layout_below="@+id/passTag"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_toStartOf="@+id/logo"
             android:background="@color/secondaryColor"
             android:onClick="onClickListener"
             android:text="@string/login" />
@@ -80,12 +81,21 @@
             android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="30dp"
-            android:onClick="onClickListener"
+            android:layout_alignBaseline="@+id/login"
+            android:layout_alignBottom="@+id/login"
+            android:layout_toEndOf="@+id/logo"
             android:background="@color/secondaryColor"
+            android:onClick="onClickListener"
             android:text="@string/signup" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="31dp" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

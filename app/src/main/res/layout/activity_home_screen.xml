@@ -7,7 +7,115 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <ImageView
+            android:id="@+id/profileMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="70dp"
+            android:src="@drawable/ic_launcher_background" />
 
+        <TextView
+            android:id="@+id/fnameMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_below="@+id/profileMain"
+            android:paddingTop="20dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/lnameMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fnameMain"
+            android:layout_marginStart="29dp"
+            android:layout_toEndOf="@+id/fnameMain"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/birthMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/fnameMain"
+            android:layout_below="@+id/fnameMain"
+            android:layout_marginTop="28dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/cityMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/birthMain"
+            android:layout_below="@+id/birthMain"
+            android:layout_marginTop="19dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/stateMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/cityMain"
+            android:layout_below="@+id/cityMain"
+            android:layout_marginTop="18dp"
+            style="@style/listTitle"
+            android:text="" />
+
+
+
+        <TextView
+            android:id="@+id/jTitleMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/stateMain"
+            android:layout_below="@+id/stateMain"
+            android:layout_marginTop="22dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/phoneMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/jTitleMain"
+            android:layout_below="@+id/jTitleMain"
+            android:layout_marginTop="21dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/emailMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/phoneMain"
+            android:layout_below="@+id/phoneMain"
+            android:layout_marginTop="23dp"
+            style="@style/listTitle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/genderMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/emailMain"
+            android:layout_below="@+id/emailMain"
+            android:layout_marginTop="19dp"
+            style="@style/listTitle"
+            android:text="" />
+
+
+    </RelativeLayout>
     <include
         layout="@layout/app_bar_home_screen"
         android:layout_width="match_parent"

@@ -14,21 +14,25 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.project.self.DataClass.Consts;
 import com.project.self.DataClass.User;
 import com.project.self.Helper.JSONWriter;
 import com.project.self.R;
+import com.project.self.ShareQR;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
 
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     User newUser;
     private final static String TAG = "HomeScreen";
-
+    SharedPreferences sharedPreferences;
     TextView name;
     TextView email;
 
@@ -62,12 +66,51 @@ public class HomeScreen extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        ImageView profile = (ImageView) findViewById(R.id.profileMain);
+        TextView fname = (TextView) findViewById(R.id.fnameMain);
+        TextView lname = (TextView) findViewById(R.id.lnameMain);
+        TextView birth = (TextView) findViewById(R.id.birthMain);
+        TextView city = (TextView) findViewById(R.id.cityMain);
+        TextView state = (TextView) findViewById(R.id.stateMain);
+        TextView jTitle = (TextView) findViewById(R.id.jTitleMain);
+        TextView phone = (TextView) findViewById(R.id.phoneMain);
+        TextView email = (TextView) findViewById(R.id.emailMain);
+        TextView gender = (TextView) findViewById(R.id.genderMain);
+        if(sharedPreferences.getBoolean("PERSONA-CREATED", false)){
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.fName, false)){
+                fname.setText(newUser.getFirstName());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.lName, false)){
+                lname.setText(newUser.getLastName());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.birth, false)){
+                birth.setText(newUser.getBirthday());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.city, false)){
+                city.setText(newUser.getCity());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.state, false)){
+                state.setText(newUser.getState());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.jTitle, false)){
+                jTitle.setText(newUser.getJobTitle());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.phone, false)){
+                phone.setText(newUser.getPhone());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.eMail, false)){
+                email.setText(newUser.getEmail());
+            }
+            if(sharedPreferences.getBoolean("PERSONA-"+Consts.gender, false)){
+                gender.setText(newUser.getGender());
+            }
+        }
 
     }
     //loads data from shareprefernces and updates it on screen
     public void inflateData(){
         JSONObject userObj;
-        SharedPreferences sharedPreferences =getSharedPreferences("Admin",MODE_PRIVATE);
+        sharedPreferences =getSharedPreferences("Admin",MODE_PRIVATE);
         String userdata = sharedPreferences.getString(Consts.userData,"");
         newUser = new User();
         Log.d("HOMESCREEN","inflateData"+userdata);
@@ -145,7 +188,8 @@ public class HomeScreen extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.sharepersona) {
-            //handle share persona
+            Intent intent = new Intent(HomeScreen.this, ShareQR.class);
+            startActivity(intent);
         } else if (id == R.id.shareapp) {
             //handle app sharing
         } else if (id == R.id.setting) {

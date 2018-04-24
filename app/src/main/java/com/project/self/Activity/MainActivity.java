@@ -10,12 +10,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.project.self.DataClass.Consts;
 import com.project.self.Helper.DBHandler;
 import com.project.self.Helper.JSONWriter;
 import com.project.self.R;
 
 import org.json.JSONObject;
+
+import com.facebook.FacebookSdk;
+
+import java.util.Arrays;
 
 public class MainActivity extends Activity {
 
@@ -27,21 +36,53 @@ public class MainActivity extends Activity {
     private String password;
     private Button login;
     private Button singup;
+    private CallbackManager callbackManager;
+    private LoginButton loginButton;
+    private static final String EMAIL = "email";
     SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        callbackManager = CallbackManager.Factory.create();
+
         sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
         userName =  findViewById(R.id.userName);
         passWord =  findViewById(R.id.passWord);
         login = findViewById(R.id.login);
         singup = findViewById(R.id.signup);
+
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList(EMAIL));
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // App code
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+        });
         loadPreferences();
 
 
 
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void autoLogin(){
