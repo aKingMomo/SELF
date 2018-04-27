@@ -11,7 +11,7 @@
         <item
             android:id="@+id/personaEdit"
             android:icon="@drawable/persona"
-            android:title="Edit Persona" />
+            android:title="Manage Personas" />
         <item
             android:id="@+id/sharepersona"
             android:icon="@drawable/ic_menu_send"

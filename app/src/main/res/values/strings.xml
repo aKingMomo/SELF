@@ -35,4 +35,5 @@
 
     <string name="facebook_app_id">1887977828183639</string>
     <string name="fb_login_protocol_scheme">fb1887977828183639</string>
+    <string name="title_activity_manage_personas">ManagePersonas</string>
 </resources>

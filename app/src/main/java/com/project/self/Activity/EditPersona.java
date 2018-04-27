@@ -3,13 +3,12 @@ package com.project.self.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,17 +21,14 @@ import com.project.self.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
+public class EditPersona extends Activity {
 
-public class Persona extends Activity {
-
-    private static final String TAG = "Persona";
+    private static final String TAG = "EditPersona";
     private User newUser;
     private JSONObject userJSON;
     private SharedPreferences sharedPreferences;
-    private FieldCheck[] fieldsPreset = new FieldCheck[10];
+    private FieldCheck[] fieldsPreset = new FieldCheck[11];
     private RecyclerView mListView;
     private SelectListAdapter mListAdapter;
     private boolean personaCreated;
@@ -41,6 +37,7 @@ public class Persona extends Activity {
     private Button create;
     //clear will un-check and remove any written changes on the activity screen
     private Button clear;
+    private EditText pTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +47,9 @@ public class Persona extends Activity {
         personaCreated = sharedPreferences.getBoolean("PERSONA-CREATED", false);
         ListView lv = findViewById(R.id.personaListView);
         inflateData();
+        String tempStr;
+        pTitle = findViewById(R.id.personaTitleEntry);
+        pTitle.setText("Default");
         setList();
         findList();
         mListAdapter = new SelectListAdapter(this,fieldsPreset,sharedPreferences);
@@ -65,7 +65,7 @@ public class Persona extends Activity {
             public void onClick(View view) {
                 updateList();
                 Toast.makeText(getApplicationContext(), "PERSONA DETAILS UPDATED", Toast.LENGTH_SHORT).show();
-                Intent homepage = new Intent(Persona.this, HomeScreen.class);
+                Intent homepage = new Intent(EditPersona.this, HomeScreen.class);
                 startActivity(homepage);
             }
         });
@@ -92,6 +92,7 @@ public class Persona extends Activity {
         fieldsPreset[7]= new FieldCheck(Consts.gender,false);
         fieldsPreset[8]= new FieldCheck(Consts.phone,false);
         fieldsPreset[9]= new FieldCheck(Consts.eMail,false);
+        fieldsPreset[10]= new FieldCheck("Default", true);
 
     }
 
@@ -129,6 +130,8 @@ public class Persona extends Activity {
     public void updateList(){
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        String tempStr = pTitle.getText().toString();
+        editor.putString("PERSONA-TITLE",tempStr);
         editor.putBoolean("PERSONA-CREATED", true);
         editor.commit();
     }
@@ -137,7 +140,7 @@ public class Persona extends Activity {
         if(personaCreated){
             //Toast.makeText(getApplicationContext(), "FOUND PERSONA DETAILS", Toast.LENGTH_SHORT).show();
             String personaField="";
-            for(int i=0;i<10;i++){
+            for(int i=0;i<11;i++){
                 personaField="PERSONA-"+fieldsPreset[i].getName();
                 fieldsPreset[i] = new FieldCheck(fieldsPreset[i].getName(), sharedPreferences.getBoolean(personaField,false));
             }
@@ -148,7 +151,7 @@ public class Persona extends Activity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("PERSONA-CREATED", false);
         String personaField="";
-        for(int i=0;i<10;i++){
+        for(int i=0;i<11;i++){
             personaField="PERSONA-"+fieldsPreset[i].getName();
             editor.putBoolean(personaField, fieldsPreset[i].getEnabled());
         }

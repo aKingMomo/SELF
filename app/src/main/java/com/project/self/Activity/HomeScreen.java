@@ -1,7 +1,5 @@
 package com.project.self.Activity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -184,7 +182,7 @@ public class HomeScreen extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.personaEdit) {
             //handle persona edit
-            Intent intent = new Intent(HomeScreen.this, Persona.class);
+            Intent intent = new Intent(HomeScreen.this, ManagePersonas.class);
             startActivity(intent);
 
         } else if (id == R.id.sharepersona) {

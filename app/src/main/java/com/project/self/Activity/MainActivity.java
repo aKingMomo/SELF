@@ -16,6 +16,7 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.project.self.DataClass.Consts;
+import com.project.self.DataClass.User;
 import com.project.self.Helper.DBHandler;
 import com.project.self.Helper.JSONWriter;
 import com.project.self.R;
@@ -38,8 +39,10 @@ public class MainActivity extends Activity {
     private Button singup;
     private CallbackManager callbackManager;
     private LoginButton loginButton;
+    private User newUser;
     private static final String EMAIL = "email";
     SharedPreferences sharedPreferences;
+    JSONObject userJSON;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,22 +63,96 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
+                imLazy();
             }
 
             @Override
             public void onCancel() {
                 // App code
+                imLazy();
             }
 
             @Override
             public void onError(FacebookException exception) {
-                // App code
+                imLazy();
             }
         });
         loadPreferences();
 
 
 
+    }
+    public void imLazy(){
+        // App code
+        Log.d(TAG,"Saving User Data");
+        userJSON = createUserObj();
+        sharedPreferences = getSharedPreferences("Admin",MODE_PRIVATE);
+        try {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(Consts.userData, userJSON.toString());
+            editor.putString(Consts.userKey,newUser.getUsername());
+            editor.putString(Consts.passKey,newUser.getPassword());
+            editor.commit();
+            Log.d(TAG, "Saving UserJSON Data"+sharedPreferences.getString(Consts.userData,""));
+            //reset auto-login to false if new account is created
+            Log.d(TAG, "Auto-Login OFF");
+            editor.putBoolean(Consts.loginKey, false);
+            editor.apply();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //send userdata to next activity
+        Toast.makeText(getApplicationContext(),"Logged In!",Toast.LENGTH_SHORT).show();
+        Intent homepage = new Intent(MainActivity.this, HomeScreen.class);
+        startActivity(homepage);
+    }
+    public JSONObject createUserObj(){
+        //creates an account for me lol demo purposes >:]
+        newUser = new User();
+
+        String tempStr = "Alexis";
+        newUser.setFirstName(tempStr);
+        Log.d(TAG,"Name:"+tempStr);
+
+        tempStr = "King";
+        newUser.setLastName(tempStr);
+        Log.d(TAG,"Name:"+tempStr);
+
+        tempStr = "alexis.a.king@pace.edu";
+        newUser.setEmail(tempStr);
+        Log.d(TAG,"email:"+tempStr);
+
+        tempStr = "AlexisKingFB";
+        newUser.setUsername(tempStr);
+        Log.d(TAG,"Name:"+tempStr);
+
+        tempStr = "pass123";
+        newUser.setPassword(tempStr);
+
+        tempStr = "5168354300";
+        newUser.setPhone(tempStr);
+
+        tempStr = "USA";
+        newUser.setCountry(tempStr);
+
+        tempStr = "New York";
+        newUser.setCity(tempStr);
+
+        tempStr = "New York";
+        newUser.setState(tempStr);
+
+        tempStr = "May 10, 1995";
+        newUser.setBirthday(tempStr);
+
+        tempStr = "female";
+        newUser.setGender(tempStr);
+
+        tempStr = "Lab Data Analyst";
+        newUser.setJobTitle(tempStr);
+
+
+        return newUser.createJson();
     }
 
 
